@@ -563,9 +563,6 @@ h3 {
     .showroom-layout {
         grid-template-columns: 4fr 6fr;
     }
-    .showroom-content {
-        padding-left: var(--padding-x);
-    }
 }
 
 .showroom-content h3 {
