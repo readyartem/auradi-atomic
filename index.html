@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA | Premium Architecture</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+
+    <!-- Navigation Overlay -->
+    <nav class="nav-overlay">
+        <div class="nav-content">
+            <ul class="nav-links">
+                <li><a href="#intro" class="nav-link" data-hover="HOME"><span>HOME</span></a></li>
+                <li><a href="#projects" class="nav-link" data-hover="WORK"><span>WORK</span></a></li>
+                <li><a href="#showroom" class="nav-link" data-hover="STUDIO"><span>STUDIO</span></a></li>
+                <li><a href="#contact" class="nav-link" data-hover="CONTACT"><span>CONTACT</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header / Nav Trigger -->
+    <header class="header">
+        <div class="logo">AURA.</div>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            <span class="line"></span>
+            <span class="line"></span>
+        </button>
+    </header>
+
+    <main id="smooth-wrapper">
+        <div id="smooth-content">
+            
+            <!-- 1. HERO Section -->
+            <section class="hero">
+                <div class="hero-bg">
+                    <img src="assets/hero_bg.png" alt="Premium Architecture Background" class="hero-img">
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">AURA</h1>
+                    <p class="hero-tagline">Architectural purity defined.</p>
+                </div>
+                <div class="scroll-indicator">
+                    <span class="scroll-text">Scroll to explore</span>
+                    <div class="scroll-arrow">↓</div>
+                </div>
+            </section>
+
+            <!-- 2. INTRO Section -->
+            <section id="intro" class="intro section-padding">
+                <div class="container split-layout">
+                    <div class="intro-label">
+                        <span class="small-label">About</span>
+                    </div>
+                    <div class="intro-text">
+                        <h2 class="split-text">We forge profound connections between space and emotion. Through meticulous reduction, we reveal the essential character of architecture, crafting environments of timeless luxury.</h2>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. MEDIA REVEAL Block -->
+            <section class="media-reveal section-padding">
+                <div class="media-wrapper">
+                    <div class="media-inner">
+                        <img src="assets/media_block.png" alt="Architectural Detail" class="reveal-img parallax-img">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. PRODUCT GRID -->
+            <section class="products section-padding">
+                <div class="container">
+                    <div class="section-header">
+                        <h3 class="section-title split-text">Signature Series</h3>
+                        <p class="section-desc">Curated elements defining modern spaces.</p>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="assets/project_1.png" alt="Monolith" class="product-img">
+                            </div>
+                            <div class="product-info">
+                                <h4>Monolith</h4>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="assets/showroom_img.png" alt="Lumina" class="product-img">
+                            </div>
+                            <div class="product-info">
+                                <h4>Lumina</h4>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="assets/project_2.png" alt="Void" class="product-img">
+                            </div>
+                            <div class="product-info">
+                                <h4>Void</h4>
+                            </div>
+                        </div>
+                        <div class="product-card">
+                            <div class="product-img-wrapper">
+                                <img src="assets/project_3.png" alt="Echo" class="product-img">
+                            </div>
+                            <div class="product-info">
+                                <h4>Echo</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. SHOWROOM -->
+            <section id="showroom" class="showroom section-padding">
+                <div class="container container-wide">
+                    <div class="showroom-layout">
+                        <div class="showroom-content">
+                            <h3 class="split-text">The Studio</h3>
+                            <p class="showroom-desc">Experience our material library and spatial concepts in an environment designed for ultimate clarity.</p>
+                            <div class="showroom-address">
+                                <p>495 Artisian Way</p>
+                                <p>Design District, NY 10013</p>
+                            </div>
+                            <button class="btn btn-outline" data-cursor-text="VISIT"><span>Book a visit</span></button>
+                        </div>
+                        <div class="showroom-visual">
+                            <div class="showroom-img-wrapper">
+                                <img src="assets/showroom_img.png" alt="Our Showroom" class="parallax-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. PROJECTS (Horizontal Scroll Approximation or Grid) -->
+            <section id="projects" class="projects section-padding">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="small-label">Selected Works</span>
+                    </div>
+                    <div class="projects-list">
+                        <article class="project-item">
+                            <div class="project-visual">
+                                <img src="assets/project_1.png" alt="Resonance Villa" class="project-img parallax-img">
+                            </div>
+                            <div class="project-details">
+                                <h2>Resonance Villa</h2>
+                                <p class="project-meta">Glazing / Custom Facade</p>
+                            </div>
+                        </article>
+                        <article class="project-item">
+                            <div class="project-visual">
+                                <img src="assets/project_2.png" alt="The Horizon" class="project-img parallax-img">
+                            </div>
+                            <div class="project-details">
+                                <h2>The Horizon</h2>
+                                <p class="project-meta">Structural Glass / Interiors</p>
+                            </div>
+                        </article>
+                        <article class="project-item">
+                            <div class="project-visual">
+                                <img src="assets/project_3.png" alt="Oasis Pavilion" class="project-img parallax-img">
+                            </div>
+                            <div class="project-details">
+                                <h2>Oasis Pavilion</h2>
+                                <p class="project-meta">Minimalist Frameworks</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. TESTIMONIALS -->
+            <section class="testimonials section-padding dark-bg">
+                <div class="container">
+                    <div class="testimonial-carousel">
+                        <div class="testimonial-slide active">
+                            <h2 class="quote">"Their mastery of light and shadow transformed our vision into an architectural masterpiece that defies expectations."</h2>
+                            <div class="author">
+                                <span class="author-name">Elena Rostova</span>
+                                <span class="author-title">Principal Vanguard Architects</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <h2 class="quote">"The level of detail and precision in their execution is unparalleled in the realm of modern minimalism."</h2>
+                            <div class="author">
+                                <span class="author-name">Marcus Chen</span>
+                                <span class="author-title">CEO at Orion Developments</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-slide">
+                            <h2 class="quote">"Aura truly understands the delicate balance between form, function, and the human experience within a space."</h2>
+                            <div class="author">
+                                <span class="author-name">Sophia Williams</span>
+                                <span class="author-title">Client</span>
+                            </div>
+                        </div>
+                        <!-- More slides handled by JS -->
+                        <div class="slider-nav">
+                            <span class="slide-num">01 / 03</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. CTA Section -->
+            <section id="contact" class="cta section-padding">
+                <div class="container text-center">
+                    <h2 class="cta-title split-text">Ready to elevate your space?</h2>
+                    <div class="cta-actions">
+                        <button class="btn btn-outline" data-cursor-text="TALK"><span>Start a project</span></button>
+                        <button class="btn btn-outline" data-cursor-text="MAIL"><span>Contact us</span></button>
+                    </div>
+                </div>
+            </section>
+
+        </div> <!-- smooth-content -->
+    </main> <!-- smooth-wrapper -->
+
+    <!-- 9. FOOTER -->
+    <footer class="footer">
+        <div class="footer-bg">
+            <img src="assets/hero_bg.png" alt="Footer Background" class="parallax-img">
+            <div class="footer-overlay"></div>
+        </div>
+        <div class="container footer-content-wrapper">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h2 class="footer-logo">AURA.</h2>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Social</h4>
+                        <a href="#">Instagram</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Behance</a>
+                    </div>
+                    <div class="link-group">
+                        <h4>Contact</h4>
+                        <a href="mailto:hello@aura-arch.com">hello@aura-arch.com</a>
+                        <p>+1 212 555 0198</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Aura Architectural Studio. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Imprint</a>
+                    <a href="#">Privacy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- GSAP Core -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- SplitText (Using custom JS split logic since Club GreenSock is paid) -->
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+</html>
