@@ -562,8 +562,11 @@ h3 {
 
 @media (min-width: 992px) {
     .showroom-layout {
-        grid-template-columns: 3.5fr 6.5fr;
-        gap: 8vw;
+        grid-template-columns: 3fr 7fr;
+        gap: 10vw;
+    }
+    .showroom-img-wrapper {
+        aspect-ratio: 4/3;
     }
 }
 
