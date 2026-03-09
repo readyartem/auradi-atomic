@@ -103,26 +103,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const text = el.getAttribute('data-text');
         el.innerHTML = ''; // Clear existing
         
-        text.split('').forEach(char => {
+        text.split('').forEach((char, index) => {
             const span = document.createElement('span');
             span.className = 'char';
             span.innerHTML = char === ' ' ? '&nbsp;' : char;
             span.setAttribute('data-char', char === ' ' ? '&nbsp;' : char);
+            span.style.setProperty('--char-index', index);
             el.appendChild(span);
         });
-
-        // Add stagger on hover
-        const chars = el.querySelectorAll('.char');
-        el.parentElement.addEventListener('mouseenter', () => {
-            gsap.fromTo(chars, 
-                { y: '0%' },
-                { y: '-100%', duration: 0.4, stagger: 0.02, ease: 'power3.inOut', overwrite: true }
-            );
-        });
-        
-        el.parentElement.addEventListener('mouseleave', () => {
-            gsap.to(chars, { y: '0%', duration: 0.4, stagger: 0.02, ease: 'power3.inOut', overwrite: true });
-        });
+        // Hover animation is now handled by pure CSS transitions
     });
 
     // 2.8 Preloader Sequence
@@ -137,7 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const tlPreloader = gsap.timeline({
         onComplete: () => {
             preloader.style.display = 'none';
-            lenis.start();
         }
     });
 
@@ -163,6 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 1.2,
         ease: 'power4.inOut'
     }, 2.2)
+    .add(() => lenis.start(), 2.8)
     // Drop in Hero Content (overriding the CSS animation)
     .fromTo(heroContent, 
         { y: 40, opacity: 0 },

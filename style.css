@@ -296,7 +296,8 @@ h3 {
 .rolling-text .char {
     display: inline-block;
     position: relative;
-    transition: transform var(--transition-med);
+    transition: transform 0.4s var(--ease-awwwards);
+    transition-delay: calc(var(--char-index) * 0.02s);
 }
 
 .rolling-text .char::after {
@@ -304,16 +305,12 @@ h3 {
     position: absolute;
     top: 100%;
     left: 0;
-    color: var(--text-color);
+    color: inherit;
 }
 
 .btn:hover .rolling-text .char,
 .nav-link:hover .rolling-text .char {
     transform: translateY(-100%);
-}
-
-.btn:hover .rolling-text .char::after {
-    color: var(--bg-color); /* Matches button hover state */
 }
 
 /* -- Buttons -- */
