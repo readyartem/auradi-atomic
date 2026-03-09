@@ -308,7 +308,7 @@ h3 {
     color: inherit;
 }
 
-.nav-link:hover .rolling-text .char {
+.rolling-text:hover .char {
     transform: translateY(-100%);
 }
 
