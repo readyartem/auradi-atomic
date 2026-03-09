@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 3. Navigation Overlay Animation
     const menuToggle = document.querySelector('.menu-toggle');
     const navOverlay = document.querySelector('.nav-overlay');
-    const navLinks = document.querySelectorAll('.nav-link span');
+    const navLinks = document.querySelectorAll('.nav-link .menu-text-wrap');
     
     let isNavOpen = false;
     

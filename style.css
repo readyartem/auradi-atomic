@@ -276,7 +276,7 @@ h3 {
     overflow: hidden;
 }
 
-.nav-link span {
+.nav-link .menu-text-wrap {
     display: inline-block;
     transform: translateY(100%);
 }
@@ -308,7 +308,7 @@ h3 {
     color: inherit;
 }
 
-.rolling-text:hover .char {
+.nav-link:hover .rolling-text .char {
     transform: translateY(-100%);
 }
 
@@ -386,10 +386,11 @@ h3 {
     z-index: -1;
 }
 
-.hero-img {
+.hero-img, .hero-video {
     width: 100%;
     height: 100%;
     object-position: center;
+    object-fit: cover;
 }
 
 .hero-overlay {
