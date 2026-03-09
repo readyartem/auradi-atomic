@@ -558,15 +558,18 @@ h3 {
     grid-template-columns: 1fr;
     gap: 4rem;
     align-items: center;
+    padding: 0 var(--padding-x);
 }
 
 @media (min-width: 992px) {
     .showroom-layout {
-        grid-template-columns: 3fr 7fr;
-        gap: 10vw;
+        grid-template-columns: 400px 1fr;
+        gap: 8vw;
+        padding-left: max(var(--padding-x), calc((100vw - 1600px) / 2 + var(--padding-x)));
+        padding-right: 0;
     }
     .showroom-img-wrapper {
-        aspect-ratio: 4/3;
+        aspect-ratio: 16/9;
     }
 }
 
