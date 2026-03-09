@@ -3,7 +3,7 @@
     --text-color: #f0f0f0;
     --text-muted: #888888;
     --accent: #ffffff;
-    --font-heading: 'Playfair Display', serif;
+    --font-heading: 'Inter', sans-serif;
     --font-body: 'Inter', sans-serif;
     
     /* Layout */
@@ -308,7 +308,6 @@ h3 {
     color: inherit;
 }
 
-.btn:hover .rolling-text .char,
 .nav-link:hover .rolling-text .char {
     transform: translateY(-100%);
 }
