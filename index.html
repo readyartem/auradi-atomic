@@ -11,6 +11,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-text-wrapper">
+            <h1 class="preloader-text">AURA</h1>
+        </div>
+        <div class="preloader-counter">0%</div>
+    </div>
+
     <!-- Custom Cursor -->
     <div class="cursor"></div>
 
@@ -18,10 +26,10 @@
     <nav class="nav-overlay">
         <div class="nav-content">
             <ul class="nav-links">
-                <li><a href="#intro" class="nav-link" data-hover="HOME"><span>HOME</span></a></li>
-                <li><a href="#projects" class="nav-link" data-hover="WORK"><span>WORK</span></a></li>
-                <li><a href="#showroom" class="nav-link" data-hover="STUDIO"><span>STUDIO</span></a></li>
-                <li><a href="#contact" class="nav-link" data-hover="CONTACT"><span>CONTACT</span></a></li>
+                <li><a href="#intro" class="nav-link rolling-text" data-hover="HOME" data-text="HOME"><span>HOME</span></a></li>
+                <li><a href="#projects" class="nav-link rolling-text" data-hover="WORK" data-text="WORK"><span>WORK</span></a></li>
+                <li><a href="#showroom" class="nav-link rolling-text" data-hover="STUDIO" data-text="STUDIO"><span>STUDIO</span></a></li>
+                <li><a href="#contact" class="nav-link rolling-text" data-hover="CONTACT" data-text="CONTACT"><span>CONTACT</span></a></li>
             </ul>
         </div>
     </nav>
@@ -29,7 +37,7 @@
     <!-- Header / Nav Trigger -->
     <header class="header">
         <div class="logo">AURA.</div>
-        <button class="menu-toggle" aria-label="Toggle Menu">
+        <button class="menu-toggle" aria-label="Toggle Menu" data-hover="MENU" data-magnetic>
             <span class="line"></span>
             <span class="line"></span>
         </button>
@@ -130,7 +138,7 @@
                                 <p>495 Artisian Way</p>
                                 <p>Design District, NY 10013</p>
                             </div>
-                            <button class="btn btn-outline" data-cursor-text="VISIT"><span>Book a visit</span></button>
+                            <button class="btn btn-outline" data-cursor-text="VISIT" data-magnetic><span class="rolling-text" data-text="Book a visit">Book a visit</span></button>
                         </div>
                         <div class="showroom-visual">
                             <div class="showroom-img-wrapper">
@@ -217,8 +225,8 @@
                 <div class="container text-center">
                     <h2 class="cta-title split-text">Ready to elevate your space?</h2>
                     <div class="cta-actions">
-                        <button class="btn btn-outline" data-cursor-text="TALK"><span>Start a project</span></button>
-                        <button class="btn btn-outline" data-cursor-text="MAIL"><span>Contact us</span></button>
+                        <button class="btn btn-outline" data-cursor-text="TALK" data-magnetic><span class="rolling-text" data-text="Start a project">Start a project</span></button>
+                        <button class="btn btn-outline" data-cursor-text="MAIL" data-magnetic><span class="rolling-text" data-text="Contact us">Contact us</span></button>
                     </div>
                 </div>
             </section>

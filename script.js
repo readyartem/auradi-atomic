@@ -30,10 +30,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const cursorText = document.createElement('span');
     cursor.appendChild(cursorText);
     
-    let mouseX = 0;
-    let mouseY = 0;
-    let cursorX = 0;
-    let cursorY = 0;
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let cursorX = mouseX;
+    let cursorY = mouseY;
 
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
@@ -51,8 +51,9 @@ document.addEventListener("DOMContentLoaded", () => {
         cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
     });
 
-    // Hover elements interactions
+    // Hover elements interactions & Magnetic Logic
     const interactiveElements = document.querySelectorAll('a, button, [data-hover]');
+    const magneticElements = document.querySelectorAll('[data-magnetic]');
     
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
@@ -71,6 +72,108 @@ document.addEventListener("DOMContentLoaded", () => {
             cursorText.textContent = '';
         });
     });
+
+    magneticElements.forEach(el => {
+        el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            
+            gsap.to(el, {
+                x: x * 0.4,
+                y: y * 0.4,
+                duration: 0.4,
+                ease: 'power2.out'
+            });
+        });
+
+        el.addEventListener('mouseleave', () => {
+            gsap.to(el, {
+                x: 0,
+                y: 0,
+                duration: 0.7,
+                ease: 'elastic.out(1, 0.3)'
+            });
+        });
+    });
+
+    // 2.5 Rolling Text Splitting
+    const rollingTexts = document.querySelectorAll('.rolling-text');
+    rollingTexts.forEach(el => {
+        const text = el.getAttribute('data-text');
+        el.innerHTML = ''; // Clear existing
+        
+        text.split('').forEach(char => {
+            const span = document.createElement('span');
+            span.className = 'char';
+            span.innerHTML = char === ' ' ? '&nbsp;' : char;
+            span.setAttribute('data-char', char === ' ' ? '&nbsp;' : char);
+            el.appendChild(span);
+        });
+
+        // Add stagger on hover
+        const chars = el.querySelectorAll('.char');
+        el.parentElement.addEventListener('mouseenter', () => {
+            gsap.fromTo(chars, 
+                { y: '0%' },
+                { y: '-100%', duration: 0.4, stagger: 0.02, ease: 'power3.inOut', overwrite: true }
+            );
+        });
+        
+        el.parentElement.addEventListener('mouseleave', () => {
+            gsap.to(chars, { y: '0%', duration: 0.4, stagger: 0.02, ease: 'power3.inOut', overwrite: true });
+        });
+    });
+
+    // 2.8 Preloader Sequence
+    const preloader = document.querySelector('.preloader');
+    const preloaderText = document.querySelector('.preloader-text');
+    const preloaderCounter = document.querySelector('.preloader-counter');
+    const heroContent = document.querySelector('.hero-content');
+    const heroScroll = document.querySelector('.scroll-indicator');
+
+    lenis.stop(); // Disable scrolling during preloader
+
+    const tlPreloader = gsap.timeline({
+        onComplete: () => {
+            preloader.style.display = 'none';
+            lenis.start();
+        }
+    });
+
+    // Animate counter 0-100
+    let counterObj = { value: 0 };
+    tlPreloader.to(counterObj, {
+        value: 100,
+        duration: 2,
+        ease: 'power4.inOut',
+        onUpdate: () => {
+            preloaderCounter.textContent = Math.round(counterObj.value) + '%';
+        }
+    }, 0)
+    // Reveal Preloader Text
+    .to(preloaderText, {
+        y: '0%',
+        duration: 1,
+        ease: 'power4.out'
+    }, 0.5)
+    // Hide Preloader Layer
+    .to(preloader, {
+        yPercent: -100,
+        duration: 1.2,
+        ease: 'power4.inOut'
+    }, 2.2)
+    // Drop in Hero Content (overriding the CSS animation)
+    .fromTo(heroContent, 
+        { y: 40, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1.5, ease: 'power4.out' },
+        "-=0.6"
+    )
+    .fromTo(heroScroll, 
+        { y: 20, x: '-50%', opacity: 0 },
+        { y: 0, x: '-50%', opacity: 1, duration: 1.5, ease: 'power4.out' },
+        "-=1"
+    );
 
     // 3. Navigation Overlay Animation
     const menuToggle = document.querySelector('.menu-toggle');
@@ -146,9 +249,9 @@ document.addEventListener("DOMContentLoaded", () => {
             { y: '100%' },
             {
                 y: '0%',
-                duration: 1,
-                stagger: 0.02,
-                ease: 'power3.out',
+                duration: 1.2,
+                stagger: 0.03,
+                ease: 'power4.out',
                 scrollTrigger: {
                     trigger: elem,
                     start: 'top 85%',
@@ -161,12 +264,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const fadeElements = document.querySelectorAll('.product-card, .project-item, .showroom-content > p');
     fadeElements.forEach(elem => {
         gsap.fromTo(elem,
-            { y: 50, opacity: 0 },
+            { y: 80, opacity: 0 },
             {
                 y: 0,
                 opacity: 1,
-                duration: 1,
-                ease: 'power3.out',
+                duration: 1.2,
+                ease: 'power4.out',
                 scrollTrigger: {
                     trigger: elem,
                     start: 'top 85%',
